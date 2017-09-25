@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name></display-name>
+	<servlet>
+		<servlet-name>TbUserServlet</servlet-name>
+		<servlet-class>com.tiedao.servlet.TbUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TbUserServlet</servlet-name>
+		<url-pattern>/tbUserServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>TbModuleServlet</servlet-name>
+		<servlet-class>com.tiedao.servlet.TbModuleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TbModuleServlet</servlet-name>
+		<url-pattern>/tbModuleServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>FindAllServlet</servlet-name>
+		<servlet-class>com.tiedao.servlet.FindAllServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FindAllServlet</servlet-name>
+		<url-pattern>/findAllServlet</url-pattern>
+	</servlet-mapping>
+
+
+
+	<filter>
+		<filter-name>CharacterFilter</filter-name>
+		<filter-class>com.tiedao.util.CharacterFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.tiedao.util.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/afterlogin/*</url-pattern>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
